@@ -1,0 +1,239 @@
+@mixin tablet() {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.266);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  cursor: default;
+}
+
+.modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: $neutral-0;
+  padding: 40px 24px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 40px;
+  width: 100%;
+  max-width: 1138px;
+  .img-qa,
+  .modal-img {
+    // background-size: cover;
+    // background-position: bottom;
+    position: absolute;
+    z-index: 0;
+    &.right {
+      // background-image: url("../../images/MissionSpecial/addPhoto-BG.png");
+      right: -50px;
+      bottom: -50px;
+    }
+    &.left {
+      // background-image: url("../../images/MissionSpecial/addPhoto-BG2.png");
+
+      left: 0px;
+      bottom: -10px;
+    }
+    &.qa {
+      left: -50%;
+    }
+  }
+
+  .modal-img.left,
+  .modal-img.right,
+  .img-qa {
+    @include tablet() {
+      display: none;
+    }
+  }
+}
+
+.modal-body {
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .title1 {
+    color: $neutral-700;
+    &.white {
+      color: $neutral-0;
+    }
+  }
+  .title2 {
+    color: $neutral-400;
+  }
+  .add-photo {
+    margin-top: 24px;
+    width: 300px;
+    height: 300px;
+    border: 7px dashed var(--Primary-Primary-200, #e0c4ee);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .add-icon {
+    color: var(--Primary-Primary-200, #e0c4ee);
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 200%;
+    cursor: pointer;
+  }
+  h2 {
+    color: $neutral-700;
+  }
+  .alert-img {
+    position: absolute;
+
+    width: 100%;
+    object-fit: cover; /* 保持圖片完整並填滿區域 */
+    transform: scale(0.95); /* 縮小圖片至 80% */
+  }
+  @include mobile() {
+    .add-photo {
+      width: 200px;
+      height: 200px;
+    }
+    .add-icon {
+      font-size: 80px;
+    }
+  }
+}
+
+.close-btn {
+  @include btn($primary-400, $neutral-0);
+  margin-right: 5px;
+  min-width: 27px;
+  font-size: 27px;
+  padding: 5px 7px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 99;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.modal-footer {
+  z-index: 1;
+  .btn-group {
+    display: flex;
+    gap: 8px;
+  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.btn {
+  @extend .btn_outline;
+  background-color: #fff;
+  width: 150px;
+}
+.submit-btn {
+  @extend .btn_filled;
+  width: 300px;
+  &.small {
+    width: 150px;
+  }
+}
+
+@include mobile() {
+  .modal-content {
+    max-width: 90vw;
+    gap: 8px;
+  }
+  .btn {
+    width: 130px;
+  }
+  .submit-btn {
+    width: 260px;
+  }
+  .modal-footer {
+    margin-top: 24px;
+  }
+}
+.question-container {
+  position: relative;
+}
+.question-title {
+  background-color: $primary-400;
+  color: $neutral-0;
+  border-radius: 10px;
+  padding: 24px;
+}
+.answer-group {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  margin: 10px 0;
+  .answer-list {
+    border: 3px solid $primary-400;
+    color: $primary-400;
+    border-radius: 10px;
+    flex: 1;
+  }
+  .answer-circle {
+    width: 52px;
+    height: 52px;
+    border: 3px solid $primary-400;
+    color: $primary-400;
+    border-radius: 50%;
+  }
+  &.selected {
+    .answer-list {
+      background-color: $primary-400;
+      border: 3px solid $primary-400;
+      color: $neutral-0;
+    }
+  }
+}
+
+.hidden-input,
+.hidden-canvas {
+  display: none; // 隱藏原生檔案上傳按鈕
+}
+.camera-container > video {
+  max-width: 640px;
+  width: 100%;
+  @include mobile() {
+    max-width: 350px;
+  }
+}
+.flip-btn {
+  display: none;
+  @include mobile() {
+    display: block;
+  }
+}

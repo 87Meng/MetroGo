@@ -1,0 +1,446 @@
+@import "../base/font";
+@import "../base/color";
+@import "../component/btn";
+
+/* Banner */
+
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5%;
+  height: 100%;
+  background-color: $neutral-0;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox 隱藏滾動條 */
+}
+
+/* 隱藏滾動條（適用於 Chrome、Safari、Edge） */
+.banner::-webkit-scrollbar {
+  display: none;
+}
+
+.block {
+  flex: 0 0 auto;
+  aspect-ratio: 1 / 1;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.text-content {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: $font-dela;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: black;
+}
+
+.media-content {
+  width: 100%;
+  height: 100%;
+}
+
+.media-content img,
+.media-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hidden {
+  opacity: 0;
+  transition: 0.2s;
+  transform: scale(0);
+}
+
+p {
+  text-align: center;
+  font-family: $font-dela;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* 各線入口 */
+
+.line-entrance {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: $neutral-700;
+  padding-bottom: 80px;
+}
+
+.line-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+.img-container {
+  width: 60%;
+  height: auto;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  padding: 20px 50px;
+}
+
+.line-square {
+  display: flex;
+  width: 40%;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: $neutral-0;
+  text-decoration: none;
+  h2 {
+    color: $neutral-0;
+  }
+  h2:hover {
+    transition: text-shadow 0.3s ease-in-out;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// 控制入口區塊的版面排版
+.hover-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+// 控制入口區塊版面顏色
+.green-line {
+  background-color: $green-400;
+}
+.brown-line {
+  background-color: $orange-400;
+}
+.orange-line {
+  background-color: $yellow-400;
+}
+.blue-line {
+  background-color: $aqua-400;
+}
+.red-line {
+  background-color: $pink-400;
+}
+
+/* GO編精選 */
+
+.featured {
+  background-color: $neutral-700;
+  width: 100%;
+}
+
+.featured-title {
+  font-size: 4.5rem;
+  text-align: center;
+  color: $yellow-400;
+}
+
+.mySwiper {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 30px 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  --swiper-navigation-color: #ffffff; /* 導航按鈕顏色 */
+  --swiper-navigation-size: 24px; /* 導航按鈕大小 */
+}
+
+swiper-slide {
+  display: flex;
+  width: 100%;
+  background-color: $neutral-700;
+  align-items: center;
+  gap: 60px;
+}
+
+.featured-container {
+  display: flex;
+  background-color: $neutral-700;
+  justify-content: flex-start;
+  gap: 60px;
+  padding: 60px;
+}
+
+.featured-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-paragraph {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  gap: 50px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.paragraph-title {
+  text-align: justify;
+  color: $neutral-0;
+  display: -webkit-box; /* 必須搭配 */
+  -webkit-box-orient: vertical; /* 必須搭配 */
+  -webkit-line-clamp: 2; /* 限制最多 2 行 */
+  overflow: hidden; /* 防止溢出 */
+  text-overflow: ellipsis;
+}
+
+.paragraph {
+  color: $neutral-0;
+  text-align: justify;
+  font-family: $font-noto;
+  display: -webkit-box; /* 必須搭配 */
+  -webkit-box-orient: vertical; /* 必須搭配 */
+  -webkit-line-clamp: 3; /* 限制最多 2 行 */
+  overflow: hidden; /* 防止溢出 */
+  text-overflow: ellipsis;
+}
+
+.btn-container {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+/* 合作夥伴 */
+
+.partners {
+  width: 100%;
+  height: auto;
+}
+.partners-title {
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-around;
+  color: $neutral-0;
+  background-color: $yellow-400;
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.partners-title h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  white-space: nowrap; // 防止換行
+}
+
+.logo-swiper {
+  display: flex;
+  padding: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  background-color: $neutral-0;
+  transition-timing-function: linear;
+}
+
+.logo {
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
+  height: 400px;
+  background-color: $neutral-0;
+}
+
+.logo-container {
+  width: 100px;
+  height: auto;
+  margin-right: 40px;
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+// animate.css 控制箭頭動畫
+.animate-left {
+  animation: slideInRight 1.5s infinite, flash 1.2s infinite;
+}
+
+.animate-right {
+  animation: slideInLeft 1.5s infinite, flash 1.2s infinite;
+}
+
+// 手機版
+@media screen and (max-width: 1240px) {
+  // banner
+  .text-content {
+    font-size: 90px;
+  }
+  // 各線入口
+  .hover-container h2 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  // banner
+  // .banner {
+  //   width: 100%;
+  //   flex-direction: column;
+  // }
+  // .banner-grid {
+  //   flex-direction: row;
+  //   width: 100%;
+  //   padding-bottom: 0.5%;
+  // }
+
+  // 各線入口
+  .line-entrance {
+    flex-direction: row;
+    padding-bottom: 50px;
+  }
+  .img-container {
+    display: none;
+  }
+  .line-square {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    writing-mode: vertical-lr;
+    h2 {
+      padding: 100px 0;
+    }
+  }
+
+  // GO編精選
+
+  .featured-title {
+    font-size: 70px;
+  }
+  .featured-container {
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mySwiper {
+    padding-top: 0px;
+  }
+
+  // .featured-img {
+  //   display: flex;
+  //   width: 100%;
+  //   height: auto;
+  // }
+
+  .featured-paragraph {
+    gap: 30px;
+  }
+
+  .paragraph-title {
+    text-align: center;
+  }
+
+  .paragraph,
+  .btn-container {
+    justify-content: center;
+  }
+
+  // 合作夥伴
+  .partners h2 {
+    font-size: 50px;
+    width: 100%;
+  }
+
+  .arrows img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo {
+    height: 200px;
+  }
+
+  .logo-container {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  // banner
+  .banner-grid {
+    p {
+      font-size: 64px;
+    }
+  }
+  // 各線入口
+  .hover-container h2 {
+    font-size: 40px;
+  }
+
+  // GO編精選
+  .mySwiper{
+    padding: 0px 16px;
+  }
+  .featured-container {
+    gap: 24px;
+  }
+
+  .featured-title {
+    font-size: 50px;
+  }
+
+  .paragraph-title {
+    font-size: 20px;
+  }
+  .paragraph {
+    display: none;
+  }
+
+  // 合作夥伴
+  .partners h2 {
+    font-size: 24px;
+  }
+  .arrows img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .logo {
+    height: auto;
+  }
+
+  .logo-container {
+    width: 50px;
+  }
+}

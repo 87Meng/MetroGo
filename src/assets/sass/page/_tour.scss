@@ -1,0 +1,330 @@
+@import "../base/font";
+@import "../base/color";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Banner */
+
+.banner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0px 50px 96px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  background-color: $metro-blue;
+}
+
+h1 {
+  color: $neutral-0;
+}
+
+.line-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.top {
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
+}
+
+.line-station {
+  display: flex;
+  align-items: flex-start;
+}
+
+.circle,
+.line {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  padding: 22.5px 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hover-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hover-light {
+  display: flex;
+  flex-direction: column;
+}
+
+.hover-light :hover {
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 10px #99d6ff;
+}
+
+.bottom {
+  display: flex;
+  align-self: flex-start;
+}
+
+.name-container {
+  display: flex;
+  position: absolute;
+}
+
+.station-name {
+  writing-mode: vertical-lr;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: bold;
+  color: $neutral-0;
+  right: 246px;
+  top: -26px;
+}
+
+/* 文章 */
+
+.paragraph {
+  display: flex;
+  width: 100%;
+  padding: 80px 96px 120px 96px;
+  flex-direction: column;
+  align-items: center;
+  gap: 150px;
+}
+
+.station {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 80px;
+}
+
+.paragraph-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.title1 {
+  font-family: $font-dela;
+  font-weight: 400;
+  width: 100%;
+}
+
+p {
+  font-weight: bold;
+}
+
+.text {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 40px;
+}
+
+.paragraph-content {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+}
+
+.img-container {
+  width: 400px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-container-rows {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  height: auto;
+}
+
+.img-container-bottom {
+  width: 400px;
+  height: auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.title1.name {
+  margin-bottom: -40px;
+}
+
+@media screen and (max-width: 1024px) {
+  // banner
+  h1 {
+    font-size: 68px;
+  }
+  .circle,
+  .line {
+    width: 40px;
+    height: 40px;
+  }
+  .station-name {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  // 內文
+  .hidden {
+    display: none;
+  }
+  .title1 {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  // banner
+  .banner {
+    align-items: center;
+    padding: 40px 20px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  .top {
+    width: 100%;
+    justify-content: center;
+  }
+  .line,
+  .circle {
+    visibility: hidden;
+  }
+  .bottom {
+    display: none;
+  }
+  .hover-light,
+  .visible {
+    visibility: visible;
+  }
+
+  // 內文
+  .paragraph {
+    padding: 32px 20px;
+  }
+
+  .station {
+    gap: 40px;
+  }
+  .paragraph-container {
+    gap: 20px;
+  }
+  .title1 {
+    font-size: 18px;
+  }
+  .paragraph-content {
+    font-size: 12px;
+  }
+  .title1.name {
+    margin-bottom: -20px;
+  }
+}
+
+
+/* 各線顏色 */
+
+.banner {
+  &.blue {
+    background-color: $metro-blue;
+  }
+
+  &.red {
+    background-color: $metro-red;
+  }
+  &.green {
+    background-color: $metro-green;
+  }
+  &.yellow {
+    background-color: $metro-yellow;
+  }
+  &.brown {
+    background-color: $metro-brown;
+  }
+}
+
+.paragraph {
+  &.blue {
+    
+    .station h2 {
+      color: $metro-blue;
+    }
+
+    .paragraph-container .title1:first-of-type {
+      color: $metro-blue;
+    }
+  }
+
+  &.red {
+
+    .station h2 {
+      color: $metro-red;
+    }
+
+    .paragraph-container .title1:first-of-type {
+      color: $metro-red;
+    }
+  }
+
+  &.green {
+
+    .station h2 {
+      color: $metro-green;
+    }
+
+    .paragraph-container .title1:first-of-type {
+      color: $metro-green;
+    }
+  }
+
+  &.yellow {
+
+    .station h2 {
+      color: $metro-yellow;
+    }
+
+    .paragraph-container .title1:first-of-type {
+      color: $metro-yellow;
+    }
+  }
+
+  &.brown {
+
+    .station h2 {
+      color: $metro-brown;
+    }
+
+    .paragraph-container .title1:first-of-type {
+      color: $metro-brown;
+    }
+  }
+}
